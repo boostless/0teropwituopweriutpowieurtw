@@ -75,5 +75,4 @@ bot.on("message", async message => {
 
 });
 
-
-bot.login("Njk4MTc2NjM0OTA1NDI3OTg4.XpCBtQ.PdqAPoTrkrYfeYNhvvZdd-LNk5A");//Replace process.env.TOKEN with "<yourbots token>"
+bot.login(process.env.TOKEN);//Replace process.env.TOKEN with "<yourbots token>"
