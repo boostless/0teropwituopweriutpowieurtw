@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args)=>{
   if(args[2].length < 1) return message.reply("Neirasei savo pavardes").then(m => m.delete(5000));
   if(args[3].length < 1) return message.reply("Neirasei savo automobilio").then(m => m.delete(5000));
   if(args[4].length < 1) return message.reply("Nenurodei sumos").then(m => m.delete(5000));
-  if(args[5].length != 8) return message.reply("Neirasei savo numerio").then(m => m.delete(5000));
+  if(args[5].length != 7) return message.reply("Neirasei savo numerio").then(m => m.delete(5000));
 
   let turgausChan = message.guild.channels.find(`name`, "🚗mašinų-turgus🚗");
   let pasirinkimas = args[0]
