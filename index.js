@@ -34,7 +34,7 @@ bot.on("ready", async () => {
 bot.on("guildMemberAdd", member => {
   console.log("Žmogus vardu " + member.user.username + " katik prisijunge!")
 
-  let role = member.guild.roles.find(role => role.name === "Neaktyvuotas");
+  let role = member.guild.roles.find(role => role.name === "❌Neaktyvuotas❌");
 
   member.addRole(role)
 });
