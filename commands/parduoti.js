@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args)=>{
   if(args[4].length < 1) return message.reply("Nenurodei sumos").then(m => m.delete(5000));
   if(args[5].length != 7) return message.reply("Neirasei savo numerio").then(m => m.delete(5000));
 
-  let turgausChan = message.guild.channels.find(`name`, "🚗mašinų-turgus🚗");
+  let turgausChan = message.guild.channels.find(`name`, "🚗transporto-turgus");
   let pasirinkimas = args[0]
   let savininkasV = args[1];
   let savininkasP = args[2];
