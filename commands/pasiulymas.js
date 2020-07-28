@@ -26,6 +26,7 @@ module.exports.run = async (bot, message, args) =>{
        .addField("Kas pasiūlę", `${message.author}`)
        .addField("Kam būtų naudinga", kodel)
        .setDescription(kokiamString);
+        message.delete();
        pasiulymuchanel.send(nPasiulymasEmbed);
      }
      if(pasirinkimas == "skubus" || pasirinkimas == "Skubus"){
@@ -36,6 +37,7 @@ module.exports.run = async (bot, message, args) =>{
        .addField("Kas pasiūlę", `${message.author}`)
        .addField("Kam būtų naudinga", kodel)
        .setDescription(kokiamString);
+        message.delete();
        pasiulymuchanel.send(sPasiulymasEmbed);
      }
 
