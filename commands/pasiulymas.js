@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>{
    let kokiamString = "";
-     //if(message.channel.id != "699342517040185405") return message.delete();
+     if(message.channel.id != "699342517040185405") return message.delete();
      if(args.length < 1) return message.reply("Pvz: *pasiulymas neskubus/skubus discord/serveris hudas manau sitas hudas atrodytu geriau").then(m => m.delete(10000));
      if(args[0].length < 1) return message.reply("Nenurodei tipo").then(m => m.delete(5000));
      if(args[1].length < 1) return message.reply("Neirasei savo pasiūlymas").then(m => m.delete(5000));
