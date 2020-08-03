@@ -12,13 +12,13 @@ module.exports.run = async (bot, message, args) =>{
      let pasirinkPas = args[2];
      let kodel = args.join(" ").slice(args[0].length + args[1].length + args[2].length + 3);
      let pasiulymuchanel = message.guild.channels.find(`name`, "⌛pasiūlymai");
-     if(kokiam == "discord" || kokiam == "Discord"){
+     if(kokiam == "discord" || kokiam == "Discord" || kokiam == "d" || kokiam == "D"){
        kokiamString = "Discord";
      }else{
        kokiamString = "Serveris";
      }
 
-     if(pasirinkimas == "neskubus" || pasirinkimas == "Neskubus"){
+     if(pasirinkimas == "neskubus" || pasirinkimas == "Neskubus" || pasirinkimas == "n" || pasirinkimas == "N"){
        let nPasiulymasEmbed = new Discord.RichEmbed()
        .setTitle("⌛Pasiūlymas⌛")
        .setColor("#53db04")
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) =>{
         message.delete();
        pasiulymuchanel.send(nPasiulymasEmbed);
      }
-     if(pasirinkimas == "skubus" || pasirinkimas == "Skubus"){
+     if(pasirinkimas == "skubus" || pasirinkimas == "Skubus" || pasirinkimas == "s" || pasirinkimas == "S"){
        let sPasiulymasEmbed = new Discord.RichEmbed()
        .setTitle("⌛Pasiūlymas⌛")
        .setColor("#db3304")
