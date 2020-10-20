@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) =>{
      let kokiam = args[1];
      let pasirinkPas = args[2];
      let kodel = args.join(" ").slice(args[0].length + args[1].length + args[2].length + 3);
-     let pasiulymuchanel = message.guild.channels.find(`name`, "⌛pasiūlymai");
+     let pasiulymuchanel = message.guild.channels.find(`name`, "💡┋idėjos-pasiūlymai");
      if(kokiam == "discord" || kokiam == "Discord" || kokiam == "d" || kokiam == "D"){
        kokiamString = "Discord";
      }else{
