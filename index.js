@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+const fetch = require("node-fetch")
+
 
 fs.readdir("./commands", (err, files) => {
   if(err) console.log(err);
@@ -26,7 +28,11 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username}`);
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoja
-  bot.user.setActivity("Patruliuoja", {type: "WATCHING"});
+  fetch("http://ip:port/dynamic.json")
+    .then(x => x.json())
+    .then(json => console.log(`${json.clients}/${json.sv_maxclients}`))
+    .catch(console.error)
+  bot.user.setActivity("Dabar žaidžia " + json.clients "/32", {type: "WATCHING"});
 });
 
 
