@@ -23,12 +23,18 @@ fs.readdir("./commands", (err, files) => {
 
 });
 
+function SetPlayerDisp(){
+  fetch("http://89.40.2.59:30121/dynamic.json")
+        .then(x => x.json())
+        .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
+        .catch(console.error)
+}
 
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username}`);
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoj
-  bot.setInterval(setPlayerDisp(), 40000);
+  bot.setInterval(SetPlayerDisp(), 40000);
 });
 
 
@@ -41,12 +47,6 @@ bot.on("guildMemberAdd", member => {
   member.addRole(role)
 });
 
-function setPlayerDisp(){
-  fetch("http://89.40.2.59:30121/dynamic.json")
-        .then(x => x.json())
-        .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
-        .catch(console.error)
-}
 
 
 
