@@ -34,7 +34,10 @@ function SetPlayerDisp(){
 bot.on("ready", async () => {
   console.log(`${bot.user.username}`);
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoj
-  bot.setInterval(SetPlayerDisp(), 40000);
+  var interval = setInterval (function () {
+        SetPlayerDisp();
+        console.log(`TEST`);
+      }, 1 * 1000); 
 });
 
 
