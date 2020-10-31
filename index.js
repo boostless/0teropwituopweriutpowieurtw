@@ -30,10 +30,9 @@ bot.on("ready", async () => {
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoja
   fetch("http://89.40.2.59:30121/dynamic.json")
     .then(x => x.json())
-    .then(json => console.log(`${json.clients}/${json.sv_maxclients}`))
+    .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
     .catch(console.error)
   
-  bot.user.setActivity(`Dabar žaidžia /32`, {type: "WATCHING"});
 });
 
 
