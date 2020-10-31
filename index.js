@@ -32,7 +32,7 @@ bot.on("ready", async () => {
     .then(x => x.json())
     .then(json => console.log(`${json.clients}/${json.sv_maxclients}`))
     .catch(console.error)
-  bot.user.setActivity("Dabar žaidžia " + json.clients "/32", {type: "WATCHING"});
+  bot.user.setActivity(`Dabar žaidžia ${json.clients}/32`, {type: "WATCHING"});
 });
 
 
