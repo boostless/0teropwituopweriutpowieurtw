@@ -32,7 +32,7 @@ bot.on("ready", async () => {
   setTimeout(function() {
      fetch("http://89.40.2.59:30121/dynamic.json")
     .then(x => x.json())
-    .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}); console.log(`${json.clients}/${json.sv_maxclients}`))
+    .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
     .catch(console.error)
   }, 3000);  
   }
