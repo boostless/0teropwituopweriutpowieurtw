@@ -31,7 +31,8 @@ bot.on("ready", async () => {
   fetch("http://ip:port/dynamic.json")
     .then(x => x.json())
     .then(json => console.log(`${json.clients}/${json.sv_maxclients}`))
-    .catch(console.error)
+    .catch(console.error);
+  
   bot.user.setActivity(`Dabar žaidžia ${json.clients}/32`, {type: "WATCHING"});
 });
 
