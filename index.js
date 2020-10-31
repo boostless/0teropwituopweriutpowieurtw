@@ -37,7 +37,7 @@ bot.on("ready", async () => {
   var interval = setInterval (function () {
         SetPlayerDisp();
         console.log(`TEST`);
-      }, 1 * 1000); 
+      }, 1 * 10000); 
 });
 
 
