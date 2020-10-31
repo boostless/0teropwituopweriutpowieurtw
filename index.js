@@ -28,7 +28,7 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username}`);
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoja
-  fetch("http://ip:port/dynamic.json")
+  fetch("http://89.40.2.59:30121/dynamic.json")
     .then(x => x.json())
     .then(json => console.log(`${json.clients}/${json.sv_maxclients}`))
     .catch(console.error)
