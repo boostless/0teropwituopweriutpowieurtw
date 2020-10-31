@@ -29,13 +29,14 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username}`);
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoja
   while(true){
-  setTimeout(function() {
-     fetch("http://89.40.2.59:30121/dynamic.json")
-    .then(x => x.json())
-    .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
-    .catch(console.error)
-  }, 3000);  
-  }
+    console.log(`TEST`);
+    setTimeout(function() {
+       fetch("http://89.40.2.59:30121/dynamic.json")
+        .then(x => x.json())
+        .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
+        .catch(console.error)
+    }, 60000);  
+  };
 });
 
 
