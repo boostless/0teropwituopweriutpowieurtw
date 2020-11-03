@@ -4,7 +4,6 @@ const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const fetch = require("./node-fetch");
-const Gamedig = require('./gamedig');
 
 
 fs.readdir("./commands", (err, files) => {
@@ -26,18 +25,10 @@ fs.readdir("./commands", (err, files) => {
 
 function SetPlayerDisp(){
   
-  Gamedig.query({
-    type: 'fivem',
-    host: '89.40.2.59', // This needs to be a string
-    port: 30121
-    }).then((state) => {
     fetch("http://89.40.2.59:30121/dynamic.json")
         .then(x => x.json())
         .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "PLAYING"}))
         .catch(console.error)
-    }).catch((error) => {
-       console.log("Serveris isjungtas");
-    });
 }
 
 
