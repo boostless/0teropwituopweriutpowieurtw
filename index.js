@@ -26,7 +26,7 @@ fs.readdir("./commands", (err, files) => {
 function SetPlayerDisp(){
   fetch("http://89.40.2.59:30121/dynamic.json")
         .then(x => x.json())
-        .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "WATCHING"}))
+        .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "PLAYING"}))
         .catch(console.error)
 }
 
