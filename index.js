@@ -28,16 +28,16 @@ function SetPlayerDisp(){
   
   Gamedig.query({
     type: 'fivem',
-    host: '89.40.2.59' // This needs to be a string
-    port: 30121// This needs to be a number & is optional, unless you're not using the default port for that gameserver type
-}).then((state) => {
+    host: '89.40.2.59', // This needs to be a string
+    port: 30121
+    }).then((state) => {
     fetch("http://89.40.2.59:30121/dynamic.json")
         .then(x => x.json())
         .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "PLAYING"}))
         .catch(console.error)
-}).catch((error) => {
-    console.log("Serveris isjungtas");
-});
+    }).catch((error) => {
+       console.log("Serveris isjungtas");
+    });
 }
 
 
