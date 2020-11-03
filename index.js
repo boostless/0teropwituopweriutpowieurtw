@@ -3,7 +3,8 @@ const Discord = require("discord.js");
 const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
-const fetch = require("./node-fetch")
+const fetch = require("./node-fetch");
+const Gamedig = require('./gamedig');
 
 
 fs.readdir("./commands", (err, files) => {
@@ -24,10 +25,19 @@ fs.readdir("./commands", (err, files) => {
 });
 
 function SetPlayerDisp(){
-  fetch("http://89.40.2.59:30121/dynamic.json")
+  
+  Gamedig.query({
+    type: 'fivem',
+    host: '89.40.2.59' // This needs to be a string
+    port: 30121// This needs to be a number & is optional, unless you're not using the default port for that gameserver type
+}).then((state) => {
+    fetch("http://89.40.2.59:30121/dynamic.json")
         .then(x => x.json())
         .then(json =>  bot.user.setActivity(`Dabar žaidžia ${json.clients}/${json.sv_maxclients}`, {type: "PLAYING"}))
         .catch(console.error)
+}).catch((error) => {
+    console.log("Serveris isjungtas");
+});
 }
 
 
@@ -36,7 +46,6 @@ bot.on("ready", async () => {
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoj
   var interval = setInterval (function () {
         SetPlayerDisp();
-        console.log(`TEST`);
       }, 1 * 10000); 
 });
 
