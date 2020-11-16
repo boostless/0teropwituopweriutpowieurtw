@@ -27,7 +27,7 @@ function SetPlayerDisp(){
   
     fetch("http://89.40.2.59:30121/dynamic.json")
         .then(x => x.json())
-        .then(json =>  bot.user.setActivity(`SunCityRP  ${json.clients}/${json.sv_maxclients}`, {type: "PLAYING"}))
+        .then(json =>  bot.user.setActivity(`SunCity.lt  ${json.clients}/${json.sv_maxclients}`, {type: "PLAYING"}))
         .catch(console.error)
 }
 
