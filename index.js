@@ -37,7 +37,7 @@ bot.on("ready", async () => {
   //Cia paraso ka botas veikia tai dabar rasys Watching Patruliuoj
   var interval = setInterval (function () {
         SetPlayerDisp();
-      }, 1 * 10000); 
+      }, 1 * 60000); 
 });
 
 
