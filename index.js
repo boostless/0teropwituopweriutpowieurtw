@@ -68,6 +68,20 @@ bot.on("message", async message => {
       prefixes: Botconfig.prefix
     };
   }
+  
+  
+
+  let prefix = prefixes[message.guild.id].prefixes;
+
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  if(prefix == cmd.slice(0,1)){
+    let commandFile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandFile) commandFile.run(bot,message,args);
+  };﻿
+  //ping
+
   if (message.mentions.users.first().username == "Boost") { 
       message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
   }else{
@@ -83,19 +97,6 @@ bot.on("message", async message => {
    if (message.isMemberMentioned(bot.user)) { 
       message.channel.send(`${message.author} ` + sendRNGMSG)
   }
-  
-
-  let prefix = prefixes[message.guild.id].prefixes;
-
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-  if(prefix == cmd.slice(0,1)){
-    let commandFile = bot.commands.get(cmd.slice(prefix.length));
-    if(commandFile) commandFile.run(bot,message,args);
-  };﻿
-  //ping
-
 
   if (cmd == `${prefix}ping`)
   {
