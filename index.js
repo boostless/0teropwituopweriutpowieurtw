@@ -58,7 +58,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type == "dm") return;
   
-  const randomMsg = ['Žie ateik į pm', 'Gandriukas', 'Nu ko nori', 'Easter Egg :)', 'Nebetagink manęs']
+  const randomMsg = ['Žie ateik į pm', 'Gandriukas', 'Nu ko nori', 'Easter Egg :)', 'Nebetagink manęs', 'Luktelk dabar esu pas nykštukus']
   const sendRNGMSG = randomMsg[Math.floor(Math.random() * randomMsg.length)]
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
