@@ -57,6 +57,9 @@ bot.on("guildMemberAdd", member => {
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type == "dm") return;
+  
+  const randomMsg = ['Žie ateik į pm', 'Gandriukas', 'Nu ko nori', 'Easter Egg :)', 'Nebetagink manęs']
+  const sendRNGMSG = randomMsg[Math.floor(Math.random() * messages.length)]
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
@@ -67,11 +70,15 @@ bot.on("message", async message => {
   }
   if (message.mentions.users.first().username == "Boost") { 
       message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
+  }else if (message.mentions.users.first().username == "Gustas"){
+     message.channel.send(`${message.author} Gustas dabar užsiemes :stuck_out_tongue:`)
+  }
+   if (message.isMemberMentioned(bot.user)) { 
+      message.channel.send(`${message.author} ` + sendRNGMSG)
   }
   
 
   let prefix = prefixes[message.guild.id].prefixes;
-
 
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
