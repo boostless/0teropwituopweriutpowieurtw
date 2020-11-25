@@ -65,7 +65,7 @@ bot.on("message", async message => {
       prefixes: Botconfig.prefix
     };
   }
-  if (message.mentions.has(275017169111089163)) { 
+  if (message.mentions.users.first().username == "Boost") { 
       message.author.send('Boost dabar užsiemes')
   }
   
