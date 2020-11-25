@@ -70,7 +70,8 @@ bot.on("message", async message => {
   }
   if (message.mentions.users.first().username == "Boost") { 
       message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
-  }else if (message.mentions.users.first().username == "Gustas"){
+  } 
+  if (message.mentions.users.first().username == "Gustas"){
      message.channel.send(`${message.author} Gustas dabar užsiemes :stuck_out_tongue:`)
   }
    if (message.isMemberMentioned(bot.user)) { 
