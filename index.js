@@ -66,7 +66,7 @@ bot.on("message", async message => {
     };
   }
   if (message.mentions.users.first().username == "Boost") { 
-      message.author.send('Boost dabar užsiemes')
+      message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
   }
   
 
