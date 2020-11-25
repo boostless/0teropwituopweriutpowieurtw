@@ -68,12 +68,9 @@ bot.on("message", async message => {
       prefixes: Botconfig.prefix
     };
   }
-  if (message.mentions.users.first().username == "Boost") { 
-      message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
+  if (message.mentions.users.first().username == "Boost" || message.mentions.users.first().username == "Gustas") { 
+      message.channel.send(`${message.author} :crown:Project Team dabar užsieme :stuck_out_tongue:`)
   } 
-  if (message.mentions.users.first().username == "Gustas"){
-     message.channel.send(`${message.author} Gustas dabar užsiemes :stuck_out_tongue:`)
-  }
    if (message.isMemberMentioned(bot.user)) { 
       message.channel.send(`${message.author} ` + sendRNGMSG)
   }
