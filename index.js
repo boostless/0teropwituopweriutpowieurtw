@@ -60,6 +60,7 @@ bot.on("message", async message => {
   
   const randomMsg = ['Žie ateik į pm', 'Gandriukas', 'Nu ko nori', 'Gerai nebetagink ir užeik į serverį', 'Nebetagink manęs', 'Luktelk dabar esu pas nykštukus']
   const sendRNGMSG = randomMsg[Math.floor(Math.random() * randomMsg.length)]
+  
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
@@ -82,7 +83,7 @@ bot.on("message", async message => {
   };﻿
   //ping
 
-  if (message.mentions.users.first().username == "Boost" && message.author.user != "Boost" || message.author.user != "Gustizzz") { 
+  if (message.mentions.users.first().username == "Boost" && message.member.roles.find("id", "767120900226809930") != '767120900226809930') { 
       message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
   }else{
   console.log("Tuscia")
