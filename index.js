@@ -82,13 +82,13 @@ bot.on("message", async message => {
   };﻿
   //ping
 
-  if (message.mentions.users.first().username == "Boost" && message.author.user == "Boost" || message.author.user == "Gustizzz") { 
+  if (message.mentions.users.first().username == "Boost" && message.author.user != "Boost" || message.author.user != "Gustizzz") { 
       message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
   }else{
   console.log("Tuscia")
   }
     
-  if (message.mentions.users.first().username == "Gustizzz" && message.author.user == "Boost" || message.author.user == "Gustizzz") { 
+  if (message.mentions.users.first().username == "Gustizzz" && message.author.user != "Boost" || message.author.user != "Gustizzz") { 
       message.channel.send(`${message.author} Gustas dabar užsiemes :stuck_out_tongue:`)
   } else{
   console.log("Tuscia")
