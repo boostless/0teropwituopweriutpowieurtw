@@ -65,7 +65,7 @@ bot.on("message", async message => {
       prefixes: Botconfig.prefix
     };
   }
-  if (message.isMemberMentioned("275017169111089163")) { 
+  if (message.isMemberMentioned("<@275017169111089163>")) { 
       message.author.send('Boost dabar užsiemes')
   }
   
