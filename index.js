@@ -83,7 +83,7 @@ bot.on("message", async message => {
   };﻿
   //ping
 
-  if (message.mentions.users.first().username == "Boost" && message.member.roles.find("id", "767120900226809930") != '767120900226809930') { 
+  if (message.mentions.users.first().username == "Boost" && message.member.roles.has('767120900226809930') != '767120900226809930') { 
       message.channel.send(`${message.author} Boostas dabar užsiemes :stuck_out_tongue:`)
   }else{
   console.log("Tuscia")
